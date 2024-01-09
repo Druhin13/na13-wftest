@@ -12,7 +12,9 @@ git commit -m "$COMMIT_MESSAGE"
 # Push to the remote repository
 git push
 
-# Print the script and link tags
+# Get the repository name from the Git remote URL
 REPO_NAME=$(git remote get-url origin | sed -n 's#.*/\([^/]*\)\.git#\1#p')
-echo "<script src=\"https://${REPO_NAME}.vercel.app/dist/index.js\"></script>"
-echo "<link rel=\"stylesheet\" href=\"https://${REPO_NAME}.vercel.app/dist/index.css\"></link>"
+
+# Create or update the README.md file with script and link tags
+echo "<script src=\"https://${REPO_NAME}.vercel.app/dist/index.js\"></script>" > README.md
+echo "<link rel=\"stylesheet\" href=\"https://${REPO_NAME}.vercel.app/dist/index.css\"></link>" >> README.md
