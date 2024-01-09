@@ -1,4 +1,5 @@
 import './cs-calc.js';
+import './date-0.js';
 import './footer.js';
 import './img-download.js';
 import './logo-marquee.js';
