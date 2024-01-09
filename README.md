@@ -53,6 +53,9 @@ To effectively use this template, you'll need:
 1) Commit and push your changes to the main branch.
 2) Vercel will handle the deployment.
    You'll receive `<script>` and `<link>` with Vercel URLs in the terminal for the latest version of your project.
+3) ```html
+<script src="https://{{REPO_NAME}}.vercel.app/dist/index.js"></script>
+<link rel="stylesheet" href="https://{{REPO_NAME}}.vercel.app/dist/index.css">
 
 ### Step 4: Transitioning to Production
 When you're ready to move your project to production:

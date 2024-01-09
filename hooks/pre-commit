@@ -1,2 +1,10 @@
 #!/bin/sh
 node generate-index.js
+
+# Get the current Git repository name
+REPO_NAME=$(basename -s .git `git config --get remote.origin.url`)
+
+# Check if README.md exists and replace {{REPO_NAME}} with the actual repo name
+if [ -f "README.md" ]; then
+  sed -i "s/{{REPO_NAME}}/$REPO_NAME/g" README.md
+fi
