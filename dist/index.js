@@ -2,9 +2,11 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 for(var t=$(".total-reached"),e=$(".total-cost"),o=$(".per-person"),l=0;l<t.length;l++)t[l].setAttribute("id","total-reached-"+l),console.log(t[l]),e[l].setAttribute("id","total-cost-"+l),console.log(e[l]),o[l].setAttribute("id","per-person-"+l),console.log(o[l]);var r=[],s=[];for(l=0;l<t.length;l++)r.push($("#total-reached-"+l).text()),console.log(r[l]),s.push($("#total-cost-"+l).text()),console.log(s[l]);var a=[];for(l=0;l<t.length;l++){var c=parseInt(s[l].replace(/,/g,""))/parseInt(r[l].replace(/,/g,""));console.log(c),c=(c*=100).toFixed(2),console.log(c),c="~"+c+"¢",console.log(c),a.push(c)}for(l=0;l<t.length;l++)r[l]=r[l].replace(/\B(?=(\d{3})+(?!\d))/g,","),r[l]=r[l]+"+",s[l]=s[l].replace(/\B(?=(\d{3})+(?!\d))/g,","),s[l]="$"+s[l];for(l=0;l<t.length;l++)$("#total-reached-"+l).text(r[l]),$("#total-cost-"+l).text(s[l]),$("#per-person-"+l).text(a[l]);
 },{}],"v9Q8":[function(require,module,exports) {
 $(".footer-link:not(.t3)").hover(function(){$(".footer-link:not(.t3)").css("opacity","0.4"),$(this).css("opacity","1")},function(){$(".footer-link:not(.t3)").css("opacity","1")});
+},{}],"mpXm":[function(require,module,exports) {
+$("#download-link").click(function(){var e=document.getElementById("img-to-download").src,t=document.getElementById("img-name").textContent;fetch(e).then(function(e){return e.blob()}).then(function(e){var n=URL.createObjectURL(e),c=document.createElement("a");c.href=n,c.download=t+".png",c.click(),URL.revokeObjectURL(n)}).catch(function(e){console.error("Error fetching the image:",e)})});
 },{}],"EQgT":[function(require,module,exports) {
 if(window.innerWidth>768){function n(){$("[indent]").each(function(){var n=$(this).attr("indent");if($("#"+n).length>0){var t=$("#"+n).outerWidth();console.log("indentWidth of "+n+" is "+t),$(this).css("text-indent",t+"px")}else console.log("Element with id "+n+" does not exist.")})}$(document).ready(function(){n()}),$(window).resize(function(){n()})}
 },{}],"Focm":[function(require,module,exports) {
-"use strict";require("./cs-calc.js"),require("./footer.js"),require("./text-indent.js");
-},{"./cs-calc.js":"pI8e","./footer.js":"v9Q8","./text-indent.js":"EQgT"}]},{},["Focm"], null)
+"use strict";require("./cs-calc.js"),require("./footer.js"),require("./img-download.js"),require("./text-indent.js");
+},{"./cs-calc.js":"pI8e","./footer.js":"v9Q8","./img-download.js":"mpXm","./text-indent.js":"EQgT"}]},{},["Focm"], null)
 //# sourceMappingURL=/index.js.map
