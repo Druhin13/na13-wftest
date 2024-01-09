@@ -1,3 +1,4 @@
+import './ajax-cms.js';
 import './cs-calc.js';
 import './date-0.js';
 import './footer.js';
