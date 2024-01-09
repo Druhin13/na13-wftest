@@ -1,15 +1,18 @@
 #!/bin/bash
 
-echo "Executing auto-commit.sh script"
+# Set the default commit message
+COMMIT_MESSAGE="Automated build and bundling"
 
-# Perform an automated commit
+# Add changes to the staging area
 git add -A
-git commit -m "Automated build and bundling"  # Commit with a fixed message
-git push origin main
 
-# Get the repository name from the remote URL
-repo_name=$(git config --get remote.origin.url | sed 's/.*\///;s/.git$//')
+# Commit with the default message
+git commit -m "$COMMIT_MESSAGE"
+
+# Push to the remote repository
+git push
 
 # Print the script and link tags
-echo "<script src=\"https://${repo_name}.vercel.app/dist/index.js\"></script>"
-echo "<link rel=\"stylesheet\" href=\"https://${repo_name}.vercel.app/dist/index.css\"></link>"
+REPO_NAME=$(git remote get-url origin | sed -n 's#.*/\([^/]*\)\.git#\1#p')
+echo "<script src=\"https://${REPO_NAME}.vercel.app/dist/index.js\"></script>"
+echo "<link rel=\"stylesheet\" href=\"https://${REPO_NAME}.vercel.app/dist/index.css\"></link>"
