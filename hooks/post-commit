@@ -1,2 +1,7 @@
 #!/bin/sh
 npm run bundle && git add -A
+
+# Print script and link tags
+REPO_NAME="your-repo-name"  # Replace with your actual repo name
+echo "<script src=\"https://$REPO_NAME.vercel.app/dist/index.js\"></script>"
+echo "<link rel=\"stylesheet\" href=\"https://$REPO_NAME.vercel.app/dist/index.css\"></link>"
