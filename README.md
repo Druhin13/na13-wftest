@@ -53,7 +53,6 @@ To effectively use this template, you'll need:
 1) Commit and push your changes to the main branch.
 2) Vercel will handle the deployment.
    You'll receive `<script>` and `<link>` with Vercel URLs in the terminal for the latest version of your project.
-3) <script src="https://na13-wftest.vercel.app/dist/index.js"></script> <br> <link rel="stylesheet" href="https://na13-wftest.vercel.app/dist/index.css">
 
 ### Step 4: Transitioning to Production
 When you're ready to move your project to production:
