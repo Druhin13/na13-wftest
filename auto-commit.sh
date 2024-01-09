@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Executing auto-commit.sh script"
+
 # Perform an automated commit
 git add -A
 git commit -m "Automated build and bundling"  # Commit with a fixed message
